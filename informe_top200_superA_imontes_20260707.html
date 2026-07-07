@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top 200 Super A · Recomendaciones · 07/07/2026</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0f2235;--navy-mid:#1a3a5c;--blue:#2563a8;--blue-light:#dbeafe;
+  --green:#166534;--green-light:#dcfce7;
+  --amber:#92400e;--amber-light:#fef3c7;
+  --red:#991b1b;--red-light:#fee2e2;
+  --purple:#5b21b6;--purple-light:#ede9fe;
+  --gray-50:#f8f7f4;--gray-100:#f0ede8;--gray-200:#e2ddd6;
+  --gray-400:#9c9488;--gray-600:#5c5650;--gray-900:#1c1917;
+  --accent:#e85d04;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--gray-50);color:var(--gray-900);font-size:14px;line-height:1.5}
+
+/* HEADER */
+.header{background:var(--navy);position:relative;overflow:hidden}
+.header::before{content:'';position:absolute;top:-80px;right:-80px;width:360px;height:360px;border-radius:50%;background:rgba(232,93,4,.10);pointer-events:none}
+.header::after{content:'';position:absolute;bottom:-50px;left:25%;width:250px;height:250px;border-radius:50%;background:rgba(37,99,168,.12);pointer-events:none}
+.header-inner{max-width:1200px;margin:0 auto;padding:44px 40px 36px;position:relative;z-index:1;display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.header-left .eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:10px}
+.header-left h1{font-size:30px;font-weight:600;color:#fff;line-height:1.15;margin-bottom:6px}
+.header-left .sub{font-size:13px;color:rgba(255,255,255,.5)}
+.header-right{display:flex;gap:24px;flex-wrap:wrap}
+.hm{display:flex;flex-direction:column;gap:3px}
+.hm-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.08em;color:rgba(255,255,255,.38);text-transform:uppercase}
+.hm-value{font-size:13px;color:rgba(255,255,255,.82);font-weight:500}
+
+/* LAYOUT */
+.container{max-width:1200px;margin:0 auto;padding:36px 40px 64px}
+
+/* KPI ROW */
+.kpi-row{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:28px}
+.kpi{background:#fff;border:1px solid var(--gray-200);border-radius:8px;padding:16px 16px 12px;position:relative;overflow:hidden}
+.kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:8px 8px 0 0}
+.kpi.c-red::before{background:#dc2626}.kpi.c-amber::before{background:var(--accent)}.kpi.c-yellow::before{background:#d97706}
+.kpi.c-green::before{background:#16a34a}.kpi.c-blue::before{background:var(--blue)}.kpi.c-gray::before{background:#6b7280}
+.kpi-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--gray-400);margin-bottom:6px}
+.kpi-value{font-size:24px;font-weight:600;line-height:1;margin-bottom:3px}
+.kpi.c-red .kpi-value{color:#991b1b}.kpi.c-amber .kpi-value{color:var(--accent)}.kpi.c-yellow .kpi-value{color:#b45309}
+.kpi.c-green .kpi-value{color:#166534}.kpi.c-blue .kpi-value{color:var(--blue)}.kpi.c-gray .kpi-value{color:#4b5563}
+.kpi-sub{font-size:11px;color:var(--gray-400)}
+
+/* FILTERS */
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.fl{font-size:12px;color:var(--gray-400);flex-shrink:0}
+.fb{font-family:'DM Mono',monospace;font-size:11px;padding:5px 13px;border-radius:20px;border:1px solid var(--gray-200);background:#fff;color:var(--gray-600);cursor:pointer;transition:all .15s;white-space:nowrap}
+.fb:hover{border-color:var(--navy-mid);color:var(--navy-mid)}
+.fb.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.search-wrap{margin-left:auto}
+.search-input{font-family:'DM Sans',sans-serif;font-size:13px;padding:6px 14px;border:1px solid var(--gray-200);border-radius:20px;outline:none;width:220px;transition:border .15s}
+.search-input:focus{border-color:var(--blue)}
+
+/* SECTION HEADER */
+.sh{display:flex;align-items:baseline;gap:12px;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--gray-200)}
+.st{font-size:12px;font-weight:600;color:var(--navy-mid);text-transform:uppercase;letter-spacing:.06em}
+.sc{font-family:'DM Mono',monospace;font-size:11px;color:var(--gray-400)}
+
+/* TABLE */
+.tw{background:#fff;border:1px solid var(--gray-200);border-radius:10px;overflow:hidden}
+table{width:100%;border-collapse:collapse;font-size:12px}
+thead{background:var(--navy);position:sticky;top:0;z-index:10}
+thead th{color:rgba(255,255,255,.7);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;padding:9px 11px;text-align:left;font-weight:500;white-space:nowrap}
+thead th.r{text-align:right}
+tbody tr:nth-child(even) td{background:var(--gray-50)}
+tbody tr:hover td{background:#eff6ff!important}
+tbody tr.rr td{background:#fff0f0!important} tbody tr.rr:hover td{background:#fee2e2!important}
+tbody tr.rw td{background:#fffbeb!important} tbody tr.rw:hover td{background:#fef3c7!important}
+tbody tr.ry td{background:#fefce8!important} tbody tr.ry:hover td{background:#fef9c3!important}
+tbody tr.rs td{background:#f5f3ff!important} tbody tr.rs:hover td{background:#ede9fe!important}
+tbody tr.hidden{display:none}
+td{padding:6px 11px;border-bottom:1px solid var(--gray-100);color:var(--gray-900);vertical-align:middle}
+tbody tr:last-child td{border-bottom:none}
+td.r{text-align:right;font-family:'DM Mono',monospace;font-size:11px}
+td.rank{font-family:'DM Mono',monospace;font-size:11px;color:var(--gray-400);text-align:center;width:30px}
+td.code{font-family:'DM Mono',monospace;font-size:11px;color:var(--navy-mid);white-space:nowrap}
+td.desc{max-width:200px}
+td.qty-cell{text-align:right;font-family:'DM Mono',monospace;font-size:11px}
+
+/* BADGES */
+.badge{display:inline-flex;align-items:center;gap:3px;font-family:'DM Mono',monospace;font-size:10px;font-weight:500;padding:2px 8px;border-radius:20px;white-space:nowrap}
+.b-pedir-ya   {background:#fee2e2;color:#7f1d1d;border:1px solid #fca5a5}
+.b-esta-semana{background:#fef3c7;color:#78350f;border:1px solid #fde68a}
+.b-pronto     {background:#fefce8;color:#713f12;border:1px solid #fef08a}
+.b-vigilar    {background:#ede9fe;color:#4c1d95;border:1px solid #c4b5fd}
+.b-ok         {background:var(--green-light);color:var(--green)}
+.b-no-pedir   {background:#f1f5f9;color:#475569}
+.val-red{color:#dc2626;font-weight:600}
+.val-amber{color:#d97706;font-weight:600}
+.val-green{color:#16a34a;font-weight:600}
+.val-gray{color:#9ca3af}
+
+/* FOOTER */
+.footnote{margin-top:24px;padding-top:16px;border-top:1px solid var(--gray-200);display:flex;gap:16px;flex-wrap:wrap}
+.fi{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--gray-600)}
+.fd{width:10px;height:10px;border-radius:2px;flex-shrink:0}
+.no-res{text-align:center;padding:40px;color:var(--gray-400);font-size:13px;display:none}
+.pases-box{background:#fff;border:1px solid var(--gray-200);border-radius:8px;padding:14px 18px;margin-bottom:20px;font-size:13px}
+.pases-box strong{color:var(--navy-mid)}
+.pases-tag{display:inline-block;font-family:'DM Mono',monospace;font-size:11px;background:var(--green-light);color:var(--green);padding:2px 8px;border-radius:12px;margin:2px}
+
+@media(max-width:900px){
+  .container{padding:24px 16px 40px}.kpi-row{grid-template-columns:repeat(3,1fr)}
+  .header-inner{padding:28px 20px 24px}.header-left h1{font-size:22px}
+  .search-wrap{margin-left:0;width:100%}.search-input{width:100%}
+}
+@media print{
+  body{background:#fff;font-size:11px}
+  .header,thead{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .toolbar{display:none}.tw{border:none}
+  tbody tr.hidden{display:table-row!important}
+}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+    <div class="header-left">
+      <p class="eyebrow">Análisis de almacén · Temporada verano 2026</p>
+      <h1>Top 200 Referencias · Recomendaciones de compra</h1>
+      <p class="sub">Cobertura calculada con demanda estacional jun–ago · Stock real 07/07/2026</p>
+    </div>
+    <div class="header-right">
+      <div class="hm"><span class="hm-label">Fecha</span><span class="hm-value">07 julio 2026</span></div>
+      <div class="hm"><span class="hm-label">Stock total</span><span class="hm-value">157.523 uds</span></div>
+      <div class="hm"><span class="hm-label">Demanda verano/mes</span><span class="hm-value">~25.100 uds</span></div>
+      <div class="hm"><span class="hm-label">Factor estacional</span><span class="hm-value">+17% vs media anual</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="kpi-row" style="margin-top:28px">
+    <div class="kpi c-red">
+      <p class="kpi-label">PEDIR YA</p>
+      <p class="kpi-value">8</p>
+      <p class="kpi-sub">Rotura o &lt;0.5M cobertura</p>
+    </div>
+    <div class="kpi c-amber">
+      <p class="kpi-label">ESTA SEMANA</p>
+      <p class="kpi-value">9</p>
+      <p class="kpi-sub">Cobertura 0.5–1M verano</p>
+    </div>
+    <div class="kpi c-yellow">
+      <p class="kpi-label">PEDIR PRONTO</p>
+      <p class="kpi-value">22</p>
+      <p class="kpi-sub">Cobertura 1–2M verano</p>
+    </div>
+    <div class="kpi c-blue">
+      <p class="kpi-label">VIGILAR</p>
+      <p class="kpi-value">17</p>
+      <p class="kpi-sub">Cobertura 2–3M verano</p>
+    </div>
+    <div class="kpi c-green">
+      <p class="kpi-label">OK</p>
+      <p class="kpi-value">131</p>
+      <p class="kpi-sub">Cobertura suficiente</p>
+    </div>
+    <div class="kpi c-gray">
+      <p class="kpi-label">NO PEDIR</p>
+      <p class="kpi-value">13</p>
+      <p class="kpi-sub">Sobrestock &gt;12M</p>
+    </div>
+  </div>
+
+  <div class="pases-box">
+    <strong>Pases aplicados</strong> — refs sustituidas excluidas del top 200:
+    <span class="pases-tag">191833 → 19183B</span>
+    <span class="pases-tag">888593 → 8M0188614</span>
+    <span class="pases-tag">CC0274800M → pendiente confirmar</span>
+    &nbsp;·&nbsp; <span style="color:var(--gray-400);font-size:12px">8M0242036 (License Key G3 2026) incluida como rotura — confirmar si tiene sustituto digital</span>
+  </div>
+
+  <div class="sh">
+    <span class="st">Detalle top 200</span>
+    <span class="sc" id="count-label">200 referencias · orden por ventas 24M</span>
+  </div>
+
+  <div class="toolbar">
+    <span class="fl">Filtrar:</span>
+    <button class="fb active" data-filter="all">Todos (200)</button>
+    <button class="fb" data-filter="PEDIR YA">🔴 Pedir ya (8)</button>
+    <button class="fb" data-filter="PEDIR ESTA SEMANA">🟠 Esta semana (9)</button>
+    <button class="fb" data-filter="PEDIR PRONTO">🟡 Pedir pronto (22)</button>
+    <button class="fb" data-filter="VIGILAR">🔵 Vigilar (17)</button>
+    <button class="fb" data-filter="NO PEDIR">⬜ No pedir (13)</button>
+    <button class="fb" data-filter="urgente">🚨 Urgentes (39)</button>
+    <div class="search-wrap">
+      <input class="search-input" type="text" id="search" placeholder="Buscar código o descripción…">
+    </div>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:30px;text-align:center">#</th>
+          <th>Código</th>
+          <th>Descripción</th>
+          <th class="r">Vtas 24M</th>
+          <th class="r">Stock</th>
+          <th class="r">Rot/mes v.</th>
+          <th class="r">Cob (m)</th>
+          <th class="r">Qty sugerida</th>
+          <th style="text-align:center;min-width:130px">Recomendación</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <p class="no-res" id="no-res">No se encontraron referencias con ese criterio.</p>
+  </div>
+
+  <div class="footnote">
+    <div class="fi"><span class="fd" style="background:#fee2e2;border:1px solid #fca5a5"></span>Pedir ya — rotura o días de stock</div>
+    <div class="fi"><span class="fd" style="background:#fef3c7;border:1px solid #fde68a"></span>Esta semana — menos de 1 mes</div>
+    <div class="fi"><span class="fd" style="background:#fefce8;border:1px solid #fef08a"></span>Pedir pronto — 1–2 meses</div>
+    <div class="fi"><span class="fd" style="background:#ede9fe;border:1px solid #c4b5fd"></span>Vigilar — 2–3 meses</div>
+    <div class="fi"><span class="fd" style="background:#dcfce7;border:1px solid #86efac"></span>OK — cobertura suficiente</div>
+    <div class="fi"><span class="fd" style="background:#f1f5f9;border:1px solid #cbd5e1"></span>No pedir — sobrestock</div>
+  </div>
+
+  <p style="margin-top:18px;font-size:11px;color:var(--gray-400);font-family:'DM Mono',monospace">
+    Qty sugerida = 3 meses demanda verano − stock actual, redondeado al múltiplo de pedido · Datos: TO_LIST_REF_VENTAS_24M_V2_IMONTES_20260707 · IMONTES / TOURON
+  </p>
+</div>
+
+<script>
+const data=[
+  [1,"8M0204693","26-SEAL @6",20416,378,572.7,0.66,"STOCK_BAJO","PEDIR ESTA SEMANA",6,1344],
+  [2,"8M0176616","33-BUJIA NGK LKAR7C-9@10",7860,1380,258.8,5.33,"NORMAL","OK",10,0],
+  [3,"866340K01","35-FILTRO DE ACEITE",7672,2754,262.0,10.51,"NORMAL","OK",0,0],
+  [4,"879885K","FILTER-FUEL @2",7368,1630,248.7,6.55,"NORMAL","OK",2,0],
+  [5,"8M0176673","33-SP ITR4A15 @4",7214,1088,294.7,3.69,"NORMAL","OK",4,0],
+  [6,"8M0187157","SEAL-BLUE @15",6945,2355,247.5,9.52,"NORMAL","OK",15,0],
+  [7,"826134T","ANODE",6781,2906,254.0,11.44,"NORMAL","OK",3,0],
+  [8,"802893T","35-FILTRO COMBUSTIBLE",6656,1630,226.3,7.2,"NORMAL","OK",0,0],
+  [9,"8M0162829","FILTER OIL",6021,915,214.7,4.26,"NORMAL","OK",0,0],
+  [10,"818298T1","KIT ANODOS",5537,747,227.0,3.29,"NORMAL","OK",0,0],
+  [11,"43026Q02","IMPELLER-W/P",5420,1375,205.0,6.71,"NORMAL","OK",0,0],
+  [12,"8M0176622","SP BPR5EFS @10",4870,2170,157.0,13.82,"SOBRESTOCK","NO PEDIR",10,0],
+  [13,"8172771","27-JUNTA",4410,1935,173.3,11.16,"NORMAL","OK",5,0],
+  [14,"8M0176692","33-BUJIA NGK ZFR5F @4",4210,1672,121.0,13.82,"SOBRESTOCK","NO PEDIR",4,0],
+  [15,"8M0176653","33-PLUG ILFR6GE@4",3888,880,162.5,5.42,"NORMAL","OK",4,0],
+  [16,"893404","ANODO",3794,769,118.0,6.52,"NORMAL","OK",0,0],
+  [17,"8M0206956","92-ACEITE O/B 4T SINT. MERC. 4L @3",3462,1275,106.0,12.03,"SOBRESTOCK","NO PEDIR",1,0],
+  [18,"8M0176613","SP BPR6EFS @10",3421,460,151.5,3.04,"NORMAL","OK",10,0],
+  [19,"8M0123025","35-FILTRO DE ACEITE",3393,356,126.0,2.83,"NORMAL","VIGILAR",0,22],
+  [20,"8M0219575","92-GEAR LUBE HIGH PERF. 1L @6",3307,338,170.5,1.98,"STOCK_BAJO","PEDIR PRONTO",1,174],
+  [21,"888761K02","ANODE KIT(ALUM)",3151,641,79.5,8.06,"NORMAL","OK",0,0],
+  [22,"94996T2","GASKET SET-DRIVE",2758,1189,120.7,9.85,"NORMAL","OK",0,0],
+  [23,"8M0133951","92-PWR STR FLD @6",2688,916,111.5,8.22,"NORMAL","OK",1,0],
+  [24,"74639Q02","BELLOWS KIT",2519,357,100.5,3.55,"NORMAL","OK",2,0],
+  [25,"888756K01","ANODE KIT(ALUM)",2517,336,96.7,3.48,"NORMAL","OK",0,0],
+  [26,"877761K01","FILTER-OIL",2450,944,87.2,10.83,"NORMAL","OK",0,0],
+  [27,"883323001","33-BUJIA",2412,417,92.2,4.52,"NORMAL","OK",4,0],
+  [28,"8M0122424","FILTER-FUEL MPP",2370,363,56.2,6.46,"NORMAL","OK",0,0],
+  [29,"858074QB1","92-OIL-PWR T/S",2341,184,48.8,3.77,"NORMAL","OK",12,0],
+  [30,"8M0206952","92-ACEITE O/B 4T 10W30 4L @3",2244,432,66.8,6.46,"NORMAL","OK",1,0],
+  [31,"8M0106635","FUEL FILTER KIT",2215,446,90.7,4.92,"NORMAL","OK",0,0],
+  [32,"76214T5","ANODE KIT",2212,593,77.0,7.7,"NORMAL","OK",2,0],
+  [33,"16755T1","INSTALL KIT @2",2192,1052,45.7,23.04,"SOBRESTOCK","NO PEDIR",2,0],
+  [34,"815504272","54-ABRAZADERA",2152,910,100.3,9.07,"NORMAL","OK",0,0],
+  [35,"8M0137814","ANODE",2011,238,55.2,4.31,"NORMAL","OK",2,0],
+  [36,"0130-4434","ANODO ZINC - PENCIL ZINC",1996,281,70.8,3.97,"NORMAL","OK",0,0],
+  [37,"430331","27-JUNTA",1973,917,82.8,11.07,"NORMAL","OK",0,0],
+  [38,"8M0176629","33-BUJIA SP DCPR6E @10",1973,1170,75.5,15.5,"SOBRESTOCK","NO PEDIR",10,0],
+  [39,"A026K278","FILTER-FUEL 0149-2106",1909,398,63.5,6.27,"NORMAL","OK",0,0],
+  [40,"8M0086221","92-ACEITE O/B 4T. 4L @3",1888,145,95.0,1.53,"STOCK_BAJO","PEDIR PRONTO",1,140],
+  [41,"8M0206996","92-OIL 4-C 10W30 SYN @3 4L MERC",1716,662,42.3,15.64,"SOBRESTOCK","NO PEDIR",1,0],
+  [42,"8M0149929","SERV KIT-100 HRS",1689,180,49.0,3.67,"NORMAL","OK",0,0],
+  [43,"8M0093688","35-FUEL FILTER",1651,432,43.7,9.89,"NORMAL","OK",0,0],
+  [44,"8M0162831","FILTER ASSY OIL",1649,595,54.5,10.92,"NORMAL","OK",0,0],
+  [45,"8M0142616","27-GASKET LOWER",1618,151,45.0,3.36,"NORMAL","OK",0,0],
+  [46,"8M0206954","92-ACEITE MCM 4T. GAS 4L @3 MERC",1582,483,60.8,7.94,"NORMAL","OK",1,0],
+  [47,"8M0086224","92-ACEITE MCM 4T. GAS 4L @3",1500,55,31.2,1.76,"STOCK_BAJO","PEDIR PRONTO",0,39],
+  [48,"8M0062406","FUELLE",1491,105,46.8,2.24,"NORMAL","VIGILAR",0,36],
+  [49,"8M0104229","47-IMPELLER KIT",1488,356,48.8,7.29,"NORMAL","OK",0,0],
+  [50,"8M0082880","SEAL KIT @3",1428,333,47.3,7.04,"NORMAL","OK",3,0],
+  [51,"8M0057772","ANODO",1397,313,59.7,5.25,"NORMAL","OK",0,0],
+  [52,"8M0086227","92-ACEITE O/B 4T. SINT. 4L @3",1391,49,46.3,1.06,"STOCK_BAJO","PEDIR PRONTO",1,90],
+  [53,"8M0204752","33-AC SPRK PLUG @8",1389,267,72.8,3.67,"NORMAL","OK",8,0],
+  [54,"8M0124227","FUELLE DE GOMA",1322,242,55.0,4.4,"NORMAL","OK",0,0],
+  [55,"877769K01","35-FILTRO DE ACEITE",1321,251,39.8,6.3,"NORMAL","OK",0,0],
+  [56,"8M0086220","92-ACEITE O/B 4T. 1L @6",1299,65,58.3,1.11,"STOCK_BAJO","PEDIR PRONTO",1,110],
+  [57,"677552","10-TORNILLO",1286,248,42.3,5.86,"NORMAL","OK",0,0],
+  [58,"8M0157133","35-FILTRO DE COMBUSTIBLE",1253,525,48.3,10.86,"NORMAL","OK",0,0],
+  [59,"822189","27-JUNTA",1243,419,50.5,8.3,"NORMAL","OK",0,0],
+  [60,"8M0238323","27-JUNTA TERMOSTATO @5",1212,90,51.8,1.74,"STOCK_BAJO","PEDIR PRONTO",5,70],
+  [61,"816431A1","FUELLE",1205,45,54.8,0.82,"STOCK_BAJO","PEDIR ESTA SEMANA",0,120],
+  [62,"8M0188614","SEAL",1194,208,40.8,5.09,"NORMAL","OK",0,0],
+  [63,"8M0119211","22-DRAIN PLUG @5",1172,473,43.3,10.92,"NORMAL","OK",5,0],
+  [64,"8M0173128","SMARTCRAFT CONNECT - UNDER COWL",1157,18,56.2,0.32,"STOCK_BAJO","PEDIR YA",0,151],
+  [65,"8M0214951","E-RING",1157,394,62.5,6.3,"NORMAL","OK",0,0],
+  [66,"8M0230959","92-ACEITE QS 2T. 4L @3",1155,53,61.0,0.87,"STOCK_BAJO","PEDIR ESTA SEMANA",0,130],
+  [67,"879194A01","30-RODAMIENTO",1148,39,52.7,0.74,"STOCK_BAJO","PEDIR ESTA SEMANA",0,120],
+  [68,"8M0204680","SEAL @3",1119,81,56.8,1.43,"STOCK_BAJO","PEDIR PRONTO",3,90],
+  [69,"8M0157616","FILTER-FUEL",1108,224,45.3,4.94,"NORMAL","OK",0,0],
+  [70,"85045","O RING",1105,155,49.2,3.15,"NORMAL","OK",5,0],
+  [71,"825191A03","32-KIT ACOPLAMIENTO TUBO",1067,159,36.2,4.4,"NORMAL","OK",0,0],
+  [72,"826134Q","ANODO",1062,245,47.2,5.19,"NORMAL","OK",3,0],
+  [73,"858084QE1","92-ACEITE SYN 25W50 VERADO 4L @3",1062,147,43.7,3.37,"NORMAL","OK",1,0],
+  [74,"8M0188221","SEAL",1059,109,30.5,3.57,"NORMAL","OK",0,0],
+  [75,"19453T","47-TURBINA",1050,318,43.2,7.37,"NORMAL","OK",0,0],
+  [76,"8M0100527","REPAIR KIT - IMP",1029,113,32.5,3.48,"NORMAL","OK",0,0],
+  [77,"8M0204653","NUT @10",1026,220,39.0,5.64,"NORMAL","OK",10,0],
+  [78,"908739","ACEITE VALVOLINE CUMMINS (5L)",1026,157,22.7,6.93,"NORMAL","OK",0,0],
+  [79,"8M0176615","SP BP8H-N-10@10",1016,308,47.0,6.55,"NORMAL","OK",10,0],
+  [80,"8M0036228","O-RING",984,214,46.5,4.6,"NORMAL","OK",0,0],
+  [81,"8M0219577","92-GEAR LUBE HIGH PERF. 10L @2",973,208,41.3,5.03,"NORMAL","OK",1,0],
+  [82,"805320A03","KIT SENSOR TRIM",952,133,52.5,2.53,"NORMAL","VIGILAR",0,25],
+  [83,"864850A02","27-JUEGO JUNTAS",935,204,54.7,3.73,"NORMAL","OK",0,0],
+  [84,"166-352","ROCKER STOPPERS",919,332,58.0,5.72,"NORMAL","OK",0,0],
+  [85,"806190T1","KIT ANODOS",919,114,27.8,4.1,"NORMAL","OK",2,0],
+  [86,"ATT-AS5505S-1","500/800 STRT 3/4 W/NRV",918,149,19.1,7.79,"NORMAL","OK",0,0],
+  [87,"828816","27-JUNTA",915,113,45.8,2.47,"NORMAL","VIGILAR",0,25],
+  [88,"880653","ANODO",911,113,19.0,5.95,"NORMAL","OK",0,0],
+  [89,"0185-5835","FILTER-OIL",908,299,35.2,8.5,"NORMAL","OK",0,0],
+  [90,"99904Q","32-LATIGUILLO POWER TRIM",908,77,38.7,1.99,"STOCK_BAJO","PEDIR PRONTO",0,40],
+  [91,"0541-1316","REPAIR KIT (PUMP-MINOR)",898,200,36.3,5.5,"NORMAL","OK",0,0],
+  [92,"53045Q01","27-JUNTA",887,576,31.7,18.19,"SOBRESTOCK","NO PEDIR",0,0],
+  [93,"8M0144800","10-SCREW @2",873,318,31.2,10.2,"NORMAL","OK",2,0],
+  [94,"8M0165557","98-J-BOX 5-WAY W/CAP",869,176,33.8,5.2,"NORMAL","OK",0,0],
+  [95,"8M0206950","92-ACEITE O/B 4T. 1L @6 MERC",864,276,34.0,8.12,"NORMAL","OK",1,0],
+  [96,"864591T02","CODO - DEL EXTRACTOR",859,211,43.8,4.81,"NORMAL","OK",0,0],
+  [97,"8M0204702","22-FITTING-ELBOW",849,63,23.0,2.74,"NORMAL","VIGILAR",0,6],
+  [98,"8M0204676","IMPELLER",846,127,37.7,3.37,"NORMAL","OK",0,0],
+  [99,"8M0101601","FLO TORQ SSR HD",836,58,31.2,1.86,"STOCK_BAJO","PEDIR PRONTO",0,36],
+  [100,"8590743","BISEL",825,114,39.3,2.9,"NORMAL","VIGILAR",0,4],
+  [101,"8M0175736","SENSOR POST-O2 (SB 2020-06)",824,42,50.7,0.83,"STOCK_BAJO","PEDIR ESTA SEMANA",0,111],
+  [102,"006824100","ANODO DE ZINC CAMBIADOR",818,309,37.3,8.28,"NORMAL","OK",0,0],
+  [103,"8M0204703","FILTER-FUEL",813,117,21.3,5.48,"NORMAL","OK",0,0],
+  [104,"859116","11-TUERCA",795,149,45.8,3.25,"NORMAL","OK",5,0],
+  [105,"8M0219171","35-FILTRO DE COMBUSTIBLE",792,304,23.0,13.22,"SOBRESTOCK","NO PEDIR",0,0],
+  [106,"8M0185794","MANIFOLD-EXHAUST",788,172,42.2,4.08,"NORMAL","OK",0,0],
+  [107,"877767K01","35-FILTRO DE ACEITE",783,367,31.3,11.71,"NORMAL","OK",0,0],
+  [108,"807166A1","SALIDA AGUA",779,186,31.8,5.84,"NORMAL","OK",0,0],
+  [109,"8M0157742","SENSOR-PRESSURE",776,147,67.8,2.17,"NORMAL","VIGILAR",0,57],
+  [110,"8M0224241","27-JUNTA",771,132,31.8,4.15,"NORMAL","OK",0,0],
+  [111,"8M0207031","92-GEAR LUBE HIGH PERF. 1L @6 MERC",767,156,21.3,7.31,"NORMAL","OK",1,0],
+  [112,"8M0176524","CABLE CAMBIO",766,90,37.2,2.42,"NORMAL","VIGILAR",0,22],
+  [113,"865615Q03","BELT",764,151,34.5,4.38,"NORMAL","OK",0,0],
+  [114,"8M0038370","10-TORNILLO",762,76,23.7,3.21,"NORMAL","OK",0,0],
+  [115,"8M0075945","HARNESS ASSY",762,68,28.5,2.39,"NORMAL","VIGILAR",0,18],
+  [116,"8M0109441","THERMOSTAT",762,130,35.5,3.66,"NORMAL","OK",0,0],
+  [117,"8M0205955","ANODE KIT-V8",760,86,19.7,4.37,"NORMAL","OK",0,0],
+  [118,"8M0230940","92-ACEITE 2T. 1L @6 QUICKSILVER",756,66,38.3,1.72,"STOCK_BAJO","PEDIR PRONTO",0,49],
+  [119,"8M0149932","KIT MANT. V8 4.6L VERADO/SEA PRO",747,153,17.3,8.83,"NORMAL","OK",0,0],
+  [120,"8M0176523","CABLE ASSY-SHIFT",741,84,23.8,3.52,"NORMAL","OK",0,0],
+  [121,"8M0176649","SP BPR6ES @10",732,220,35.7,6.17,"NORMAL","OK",10,0],
+  [122,"8M0233420","SHIFT RETAINER KT",728,29,76.2,0.38,"STOCK_BAJO","PEDIR YA",0,200],
+  [123,"879885Q","35-FILTRO DE COMBUSTIBLE",724,56,28.2,1.99,"STOCK_BAJO","PEDIR PRONTO",2,30],
+  [124,"8M0079744","92-QUICKLEEN-QS@12",719,17,33.5,0.51,"STOCK_BAJO","PEDIR ESTA SEMANA",1,84],
+  [125,"8M0137221","IMPELLER KITLER KIT",715,109,19.8,5.5,"NORMAL","OK",0,0],
+  [126,"8M0204724","TAB WASHER-.770",713,16,28.3,0.56,"STOCK_BAJO","PEDIR ESTA SEMANA",0,69],
+  [127,"8M0204720","WASHER @6",696,270,37.0,7.3,"NORMAL","OK",6,0],
+  [128,"0541-1519","SERVICE KIT (MINOR)",687,157,25.0,6.28,"NORMAL","OK",0,0],
+  [129,"892990T01","84-CABLEADO ADAPTADOR",677,160,35.8,4.47,"NORMAL","OK",0,0],
+  [130,"8M0056235","PROP NUT KIT @2",676,106,38.3,2.77,"NORMAL","VIGILAR",2,10],
+  [131,"8M2003959","SENSOR-O2",669,84,44.5,1.89,"STOCK_BAJO","PEDIR PRONTO",0,50],
+  [132,"8M0126671","ANODE KIT(ALUM)",664,169,26.5,6.38,"NORMAL","OK",0,0],
+  [133,"14070","10-TORNILLO",659,245,35.2,6.97,"NORMAL","OK",0,0],
+  [134,"62706","25-ANILLO DE GOMA",659,199,28.7,6.94,"NORMAL","OK",2,0],
+  [135,"8M0233418","SHIFT RETAINER KIT",651,3,71.7,0.04,"STOCK_BAJO","PEDIR YA",0,213],
+  [136,"8M0176683","SP LFR4A-E @10",650,100,25.7,3.9,"NORMAL","OK",10,0],
+  [137,"875208","ANODO CUADRADO 4/5 HP",649,38,22.5,1.69,"STOCK_BAJO","PEDIR PRONTO",0,30],
+  [138,"8M0205803","47-V6/V8 WTR PUMP KT",646,97,16.8,5.76,"NORMAL","OK",0,0],
+  [139,"806189T1","KIT ANODOS",643,372,30.3,12.26,"SOBRESTOCK","NO PEDIR",2,0],
+  [140,"823913Q","ANODO 2,5/3/3,3",641,112,15.5,7.23,"NORMAL","OK",2,0],
+  [141,"8M0214952","BUSHING @5",635,180,39.2,4.6,"NORMAL","OK",5,0],
+  [142,"8M6020062","GAUGE-TACH 7K",629,33,32.3,1.02,"STOCK_BAJO","PEDIR PRONTO",0,64],
+  [143,"0122-0810","FILTER-OIL",628,98,29.7,3.3,"NORMAL","OK",0,0],
+  [144,"818298Q1","KIT ANODO",625,64,29.8,2.15,"NORMAL","VIGILAR",0,26],
+  [145,"861150T02","22-CONECTOR",623,276,25.5,10.82,"NORMAL","OK",0,0],
+  [146,"879884T","35-FILTRO COMBUSTIBLE",622,55,27.5,2.0,"STOCK_BAJO","PEDIR PRONTO",0,28],
+  [147,"8M0207038","FLUID TM/STR@6",621,161,55.0,2.93,"NORMAL","VIGILAR",1,4],
+  [148,"8M0090809","SCREEN FUEL FLTR",615,28,14.0,2.0,"STOCK_BAJO","PEDIR PRONTO",0,14],
+  [149,"8M0242036","90-LICENSE KEY-G3 2026",611,0,12.7,0.0,"ROTURA","PEDIR YA",0,39],
+  [150,"8M0230935","92-ACEITE 2T. 4L @3 MERC",608,201,36.7,5.48,"NORMAL","OK",0,0],
+  [151,"863007A1","50-MOTOR ARRANQUE",607,109,40.0,2.73,"NORMAL","VIGILAR",0,11],
+  [152,"8M0214953","19-TAPON @5",602,150,36.2,4.15,"NORMAL","OK",5,0],
+  [153,"8M0089715","THERMOSTAT-140",595,32,21.0,1.52,"STOCK_BAJO","PEDIR PRONTO",0,31],
+  [154,"8M0204704","12-WASHER @2",592,70,13.0,5.38,"NORMAL","OK",2,0],
+  [155,"8M0162830","35-FILTER OIL @6",579,107,23.7,4.52,"NORMAL","OK",0,0],
+  [156,"8M0177107","27-JUNTA",575,30,27.2,1.1,"STOCK_BAJO","PEDIR PRONTO",0,52],
+  [157,"8M0204712","IMPELLER",572,92,34.5,2.67,"NORMAL","VIGILAR",0,12],
+  [158,"8M0090819","THERMOSTAT ASSY",566,91,16.2,5.63,"NORMAL","OK",0,0],
+  [159,"8M0150151","FLO TORQ SSR",564,22,32.0,0.69,"STOCK_BAJO","PEDIR ESTA SEMANA",0,74],
+  [160,"8M0097854","KIT MANT. 100 HRS F75-115",556,41,20.2,2.03,"NORMAL","VIGILAR",0,20],
+  [161,"8M0206955","92-ACEITE O/B 4T. SINT. 1L @6 MERC",556,189,21.3,8.86,"NORMAL","OK",1,0],
+  [162,"8M0217561","97-ANODE(ALUM)",553,95,18.2,5.23,"NORMAL","OK",0,0],
+  [163,"816575A2","26-KIT. RETENES",543,29,23.2,1.25,"STOCK_BAJO","PEDIR PRONTO",0,41],
+  [164,"ATT-5505-1","SAHARA MK2 500 12V",543,173,11.3,15.29,"SOBRESTOCK","NO PEDIR",0,0],
+  [165,"8M0230923","92-ACEITE QS OPTIMAX 4L @3",539,75,24.5,3.06,"NORMAL","OK",0,0],
+  [166,"866340Q03","35-FILTRO DE ACEITE",533,181,19.7,9.2,"NORMAL","OK",0,0],
+  [167,"8M0079743","92-QUICKARE-QS @12",529,0,11.0,0.0,"ROTURA","PEDIR YA",12,36],
+  [168,"8M0072133","91-PUMP-GEARLUB@6",528,186,26.0,7.15,"NORMAL","OK",6,0],
+  [169,"883702K","FILTER-OIL",517,55,17.0,3.24,"NORMAL","OK",0,0],
+  [170,"13563T3","FITTING-ENG",516,32,28.8,1.11,"STOCK_BAJO","PEDIR PRONTO",2,56],
+  [171,"INT2321141B","SUPPORT, STAYPUT",516,0,28.2,0.0,"ROTURA","PEDIR YA",0,85],
+  [172,"8M0050563","26-SEAL",513,29,17.5,1.66,"STOCK_BAJO","PEDIR PRONTO",0,24],
+  [173,"8M0176681","SP LFR5A-11 @10",512,80,20.3,3.93,"NORMAL","OK",10,0],
+  [174,"896305001","PLATE",511,110,11.7,9.43,"NORMAL","OK",0,0],
+  [175,"8M0204939","ANODE-TRIM(ALUM)",504,61,18.5,3.3,"NORMAL","OK",0,0],
+  [176,"62-2010PMOR","ELEMENT-REPL 500 TURBINE 30M",495,61,26.7,2.29,"NORMAL","VIGILAR",0,20],
+  [177,"20415150","BESTO GULF 100N ADULT",494,152,10.3,14.77,"SOBRESTOCK","NO PEDIR",0,0],
+  [178,"8M0149025","HARN-APS 72IN",493,63,10.3,6.13,"NORMAL","OK",0,0],
+  [179,"8M0142851","FACE SEAL VRING",492,63,11.3,5.56,"NORMAL","OK",0,0],
+  [180,"895146","12-ARANDELA",491,100,19.7,5.08,"NORMAL","OK",0,0],
+  [181,"8M0094232","KIT MANT. 100 HRS F150 EFI",491,51,15.0,3.4,"NORMAL","OK",0,0],
+  [182,"ATT-5508-1","SAHARA MK2 800 12V",491,131,10.2,12.81,"SOBRESTOCK","NO PEDIR",0,0],
+  [183,"8M0097855","KIT MANT.300H.F75-115",489,92,12.5,7.36,"NORMAL","OK",0,0],
+  [184,"14586","TERMOSTATO",482,54,23.3,2.31,"NORMAL","VIGILAR",0,16],
+  [185,"8M0206992","92-GEAR LUBE HIGH PERF. 10L @2 MERC",482,122,10.5,11.62,"NORMAL","OK",1,0],
+  [186,"8M0217563","97-ANODO (ALUMINIO)",482,88,14.3,6.14,"NORMAL","OK",0,0],
+  [187,"8M0168897","35-FUEL FILTER",481,171,14.5,11.79,"NORMAL","OK",0,0],
+  [188,"897726","22-CONECTOR",480,99,11.5,8.61,"NORMAL","OK",0,0],
+  [189,"8M0113174","10-TORNILLO @5",475,125,20.8,6.0,"NORMAL","OK",5,0],
+  [190,"P3230921357","ACEITE GALP GALAXIA LD 15W40 5L",473,112,17.2,6.52,"NORMAL","OK",0,0],
+  [191,"802893Q01","35-FILTRO GASOLINA",465,94,24.5,3.84,"NORMAL","OK",6,0],
+  [192,"6-290981000","HINGE SET FOR TOILET",461,167,12.7,13.18,"SOBRESTOCK","NO PEDIR",0,0],
+  [193,"8M0185622","SOLENOID",461,2,35.2,0.06,"STOCK_BAJO","PEDIR YA",0,104],
+  [194,"8M0140001","IMPLLR DRVSHFT KT",458,28,23.5,1.19,"STOCK_BAJO","PEDIR PRONTO",0,43],
+  [195,"8M0132061","92-PAINT V-SLVR@6",454,78,12.7,6.16,"NORMAL","OK",1,0],
+  [196,"8M0188226","FILTER-IAC @2",454,1,22.2,0.05,"STOCK_BAJO","PEDIR YA",2,66],
+  [197,"8M0232583","57-CORREA",453,100,11.8,8.45,"NORMAL","OK",0,0],
+  [198,"863006","O RING",451,18,21.3,0.84,"STOCK_BAJO","PEDIR ESTA SEMANA",0,46],
+  [199,"0122-0906","FILTER-OIL",446,110,18.3,6.0,"NORMAL","OK",0,0],
+  [200,"815504372","54-ABRAZADERA",445,185,23.3,7.93,"NORMAL","OK",0,0],
+];
+const URGENTES = ['PEDIR YA','PEDIR ESTA SEMANA','PEDIR PRONTO'];
+
+const recConfig = {
+  'PEDIR YA':         {cls:'rr', badge:'b-pedir-ya',    label:'🔴 Pedir ya'},
+  'PEDIR ESTA SEMANA':{cls:'rr', badge:'b-esta-semana', label:'🟠 Esta semana'},
+  'PEDIR PRONTO':     {cls:'ry', badge:'b-pronto',      label:'🟡 Pedir pronto'},
+  'VIGILAR':          {cls:'rs', badge:'b-vigilar',     label:'🔵 Vigilar'},
+  'OK':               {cls:'',   badge:'b-ok',          label:'✓ OK'},
+  'NO PEDIR':         {cls:'',   badge:'b-no-pedir',    label:'— No pedir'},
+};
+
+const tbody=document.getElementById('tbody');
+const noRes=document.getElementById('no-res');
+const countLabel=document.getElementById('count-label');
+let currentFilter='all';
+let currentSearch='';
+
+function buildTable(){
+  tbody.innerHTML='';
+  data.forEach(([rank,cod,desc,v24,stock,rot,cob,estado,rec,mult,qty])=>{
+    const cfg=recConfig[rec]||{cls:'',badge:'b-ok',label:rec};
+    const tr=document.createElement('tr');
+    if(cfg.cls) tr.className=cfg.cls;
+    tr.dataset.rec=rec;
+    tr.dataset.search=(cod+' '+desc).toLowerCase();
+
+    const cobFmt = cob===0?'<span class="val-red">0</span>':
+                   cob<1?`<span class="val-red">${cob.toFixed(2)}</span>`:
+                   cob<2?`<span class="val-amber">${cob.toFixed(2)}</span>`:
+                   cob>12?`<span class="val-gray">${cob.toFixed(1)}</span>`:
+                   cob.toFixed(2);
+    const qtyFmt = qty>0?`<strong style="color:#2563a8">${qty.toLocaleString('es-ES')}</strong>`:'<span class="val-gray">—</span>';
+    const multStr = mult>0?`<span style="font-size:10px;color:var(--gray-400)"> ×${mult}</span>`:'';
+
+    tr.innerHTML=`
+      <td class="rank">${rank}</td>
+      <td class="code">${cod}</td>
+      <td class="desc" title="${desc}">${desc}</td>
+      <td class="r">${v24.toLocaleString('es-ES')}</td>
+      <td class="r">${stock.toLocaleString('es-ES')}</td>
+      <td class="r">${rot.toFixed(1)}</td>
+      <td class="r">${cobFmt}</td>
+      <td class="qty-cell">${qtyFmt}${multStr}</td>
+      <td style="text-align:center"><span class="badge ${cfg.badge}">${cfg.label}</span></td>`;
+    tbody.appendChild(tr);
+  });
+  applyFilters();
+}
+
+function applyFilters(){
+  const rows=tbody.querySelectorAll('tr');
+  let visible=0;
+  rows.forEach(tr=>{
+    const rec=tr.dataset.rec||'';
+    const txt=tr.dataset.search||'';
+    const mf = currentFilter==='all'?true:
+               currentFilter==='urgente'?URGENTES.includes(rec):
+               rec===currentFilter;
+    const ms = !currentSearch||txt.includes(currentSearch.toLowerCase());
+    const show=mf&&ms;
+    tr.classList.toggle('hidden',!show);
+    if(show)visible++;
+  });
+  noRes.style.display=visible===0?'block':'none';
+  countLabel.textContent=`${visible} referencias · orden por ventas 24M`;
+}
+
+buildTable();
+
+document.querySelectorAll('.fb').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.fb').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter=btn.dataset.filter;
+    applyFilters();
+  });
+});
+document.getElementById('search').addEventListener('input',e=>{
+  currentSearch=e.target.value.trim();
+  applyFilters();
+});
+</script>
+</body>
+</html>
